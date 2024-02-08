@@ -1,0 +1,18 @@
+[Pointers]
+- Each variable is stored in the machine's memory at some location
+address-of operator : &, dereference operator : *
+
+ex)
+char ch = 'Q';
+char* p = &ch; // p holds the address of ch
+cout << *p; //outputs the character 'Q'
+ch = 'Z'
+cout << *p; //outputs the character 'Z'
+*p = 'X'
+cout << ch; //outputs the character 'X'
+
+Note ; int*x,y,z; //same as int*x; int y; int z;
+
+
+[String]
+- #include <string> provides many convenient operations.
