@@ -1,0 +1,42 @@
+[Data structure] 
+Primitive Data Structure (단순)
+-Integer, Loat, Character, String, Pointer
+
+Non- Primitive Data Structure
+(Linear)
+Static - Array
+Dynamic - Stack, Queue, List
+(Non-linear)
+-Tree, Graph
+
+
+[Data abstraction (데이터 추상화)]
+프로그램을 구성하는 객체들의 종류들을, 
+그리고 객체를 구성하는 데이터, 이와 관련된 연산(operation)들을 추출하는 기법
+Abstract Data Type(ADT = Data + Operations) (추상자료형)
+자료들과 그 자료에 대한 연산들을 명기
+
+
+[Algorithm Analysis]
+알고리즘을 실행시키는데 필요한 자원의 수를 결정
+Algorithm
+컴퓨터가 따라 할 수 있도록 문제과정을 설명하는것
+(typical)program = Data structure + algorithm
+all algorithms must satisfy following :
+1. Zero or more input values
+2. One or more ouput values
+3. Clear and unambiguous instructions
+4. Atomic steps that take constant time
+5. No infinite sequence of steps
+6. Feasible with specified computational device
+
+Pseudocode(의사코드)
+프로그램을 작성할 때 각 모듈이 작동하는 논리를 표현하기 위한 언어
+
+Primitive operations(단위 연산)
+정의, 단순계산, 비교, 출력 등의 가장 간단한 연산
+ex)comparison, indexing into an array, ...
+
+
+[Big-O notation] (빅오 표기법)
+알고리즘의 효율성을 표기해주는 표기
