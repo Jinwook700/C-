@@ -1,0 +1,23 @@
+vector container : 자동으로 메모리가 할당되는 배열
+
+#include <vector>
+
+vector<int> v; //비어있는 vector v 생성
+vector<int> v(5); //기본값 0으로 초기화된 5개의 원소를 가지는 vector v
+vector<int> v(5,2); //모두 2로 초기화된 5개의 원소를 가지는 vector v
+
+v.at(idx); //idx번째 원소 참조, 느리지만 범위 점검
+v[idx]; //idx번째 원소 참조, 범위 점검x, 빠름
+v.front(); //첫번째 원소 참조
+v.back(); //마지막 원소 참조
+v.clear(); //모든 원소 제거, 메모리는 남아있음
+v.push_back(7); //마지막 원소 뒤에 7 삽입
+v.pop_back(); //마지막 원소 제거
+v.begin(); //첫번째 원소 가리킴
+v.end(); //마지막 원소 가리킴
+(rbegin, rend)
+v.resize(n); //크기를 n으로 변경, 커질경우 0으로 초기화
+v.resize(n,3); //더커지면 3으로 초기화
+v.size(); //원소 갯수 리턴
+v.insert(2,3,4); //2번째 위치에 3개의 4를 넣음(뒤엣놈들은 밀림)
+v.erase(iter); //iter가 가리키는 원소 제
