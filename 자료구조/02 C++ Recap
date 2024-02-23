@@ -16,3 +16,21 @@ Note ; int*x,y,z; //same as int*x; int y; int z;
 
 [String]
 - #include <string> provides many convenient operations.
+
+
+[Contrl Flow]
+(switch)
+ex)
+swtich(command) {
+  case 'I' : //if (commnad == 'i')
+    cout << "Hello";
+    break;
+  default : //else
+    cout << "Bye";
+    break;
+}
+
+
+[Overloading]
+Two or more functions/operators are defiend with the same name 
+but with different argument lists
