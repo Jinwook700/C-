@@ -1,0 +1,22 @@
+[Set]
+Key 라 불리는 원소들의 집합으로 이루어진 컨테이너
+노드 기반 컨테이너이며, 균형 이진트리로 구현되어 있음
+key값은 중복 허용 x
+
+#include <set>
+
+set<int> s;
+set<int> s(pred); // pred로 정렬기준
+
+s.begein(); 처음원소
+s.end(); 마지막원소
+<<>> s.rbegin();, s.rend();
+s.clear(); 모든 원소 제거
+s.count(k);원소 k의 갯수 반환 (set에서는 0이나 1만나옴)
+s.empty(); s가 비어있는지 확인
+s.insert(k); 원소 k를 삽입, 자동으로 정렬된 위치에 삽입
+s.erase(start, end); 범위 원소 모두 제거
+s.insert(iter, k); iter가 가리키는 위치 부터 k를 삽입할 위치를 탐색하여 삽입
+s.erase(iter); iter가 가리키는 원소 제거, 제거 한다음 제거 한 원소 다음 원소 가리키는 반복자 리턴
+s.find(k); k를 가리키는 반복자 반환, 없을시 s.end()와같은 반복자 반환
+s.size(); 사이즈를 반환
