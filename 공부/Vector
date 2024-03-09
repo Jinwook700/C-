@@ -22,3 +22,6 @@ v.size(); //원소 갯수 리턴
 v.insert(2,3,4); //2번째 위치에 3개의 4를 넣음(뒤엣놈들은 밀림)
 v.fill(2,3,4); //2번째 3번째까지 요소 4로 바꿈
 v.erase(iter); //iter가 가리키는 원소 제거
+
+vector<pair<int,int>> v;
+v.push_back(make_pair(1,2));
