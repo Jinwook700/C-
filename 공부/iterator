@@ -1,0 +1,19 @@
+Iterator :
+포인터와 비슷하며, vector, deque, set, mape, list같은 컨테이너에 저장되어있는 원소를 참조할때 사용됨
+
+(일반 iterator 선언)
+vector<int>::iterator it;
+vector<int>::iterator it = v.begin(); // 벡터 반복자 선언 및 시작점 가리키도로 함
+
+(for문)
+for (iter = v.begin(); iter != v.end(); ++iter){
+  cout << *iter << " ";
+}
+(임의접근)
+iter[3]
+it->first, it->second // 첫 번째, 두 번째 원소
+
+[auto 반복문]
+for (const auto& number : numbers) { //numbers은 컨테이너 이름, const붙이면 읽기 전
+  cout << number << " ";
+}
