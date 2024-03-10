@@ -1,0 +1,21 @@
+map<key, value> name; >> 정렬하여 저장 / 탐색속도는 O(logN)
+unordered_map<key, value> name; / 탐색속도는 O(1)
+
+[map]
+(삽입)
+name.insert(make_pair(key,value));
+name[key] = 2;
+
+(원소 접근)
+name[key]
+
+name.find("one") : key 값이 "one"인 원소 iterator 리턴, 없으면 name.end()리턴
+
+[unordered_map]
+empty() : 맵이 비어있는지 확인 (비면 1, 아니면 0 return)
+size() : 사이즈 크기 확인
+find(key) : key에 해당하는 원소 찾음, 없으면 name.end()리턴
+count(key) : key 원소 갯수 반환 함수
+clear() : 맵 초기화
+
+(탐색방법) key : iter -> first, value : iter -> second
