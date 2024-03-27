@@ -9,4 +9,5 @@ stack.push(element) : 데이터 추가
 stack.pop() : 데이터 삭제
 stack.top() : 제일 위 데이터 반환
 stack.size() : 스택 현재 사이즈 반환
-stack.empty() : 스택 비어있는지 확
+stack.empty() : 스택 비어있는지 확인
+swap(stack1, stack2) : 두 스택 내용 바꿈
