@@ -1,0 +1,83 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+const int SUBJECT_NO = 3;
+    
+struct StudentInfo {
+    string name;
+    int scores[SUBJECT_NO];
+    int sum;
+    float average;
+};
+
+void printStudentList(vector<StudentInfo>::iterator begin, vector<StudentInfo>::iterator end) {
+    int studentCount = 1;
+    for (auto it = begin; it != end; ++it) {
+        cout << studentCount++ << " " << it->name << " ";
+        for (int j=0; j<SUBJECT_NO; ++j) {
+            cout << it->scores[j] << " ";
+        }
+        cout << it->sum << " ";
+        cout << it -> average << "\n";
+    }
+}
+
+void print_total(const vector<StudentInfo>& students) {
+    int totalScores[SUBJECT_NO + 1] = {0};
+    
+    for (const auto& student : students) {
+        for (int i = 0; i < SUBJECT_NO; ++i) {
+            totalScores[i] += student.scores[i];
+        }
+        totalScores[SUBJECT_NO] += student.sum;
+    }
+
+    cout << "Total" << " ";
+    
+    for (int i = 0; i < SUBJECT_NO + 1; ++i) {
+        cout << totalScores[i] << " ";
+    }
+}
+
+int main() {
+    vector<StudentInfo> studentList;
+    int class_member; cin >> class_member;
+    
+    cin.ignore();
+    
+    for (int i=0; i<class_member; i++) {
+        StudentInfo student;
+        student.average, student.sum = 0;
+        
+        string line; getline(cin, line);
+        
+        int pos = line.find(' ');
+        student.name = line.substr(0, pos);
+        line = line.substr(pos+1);
+        
+        pos = 0;
+        int subjectIndex = 0;
+        while ((pos = line.find(' ')) != string::npos) {
+            string scoreStr = line.substr(0, pos);
+            int score = stoi(scoreStr);
+            student.scores[subjectIndex++] = score;
+            student.sum += score;
+            line = line.substr(pos + 1);
+            pos++;
+        }
+        
+        int score = stoi(line);
+        student.scores[subjectIndex] = score;
+        student.sum += score;
+        
+        student.average = static_cast<float>(student.sum)/SUBJECT_NO;
+        
+        studentList.insert(studentList.end(), student);
+    }
+    
+    printStudentList(studentList.begin(), studentList.end());
+    print_total(studentList);
+    
+}
