@@ -3,3 +3,5 @@
 2. <iterator> advance 사용 가능
 
 3. <cctype> isdigit 사용가능
+
+4. substr 문자열 추출하기
