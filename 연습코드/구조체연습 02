@@ -1,0 +1,93 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+struct Rectangle {
+    int width;
+    int height;
+    int area() const { return width * height; }
+};
+    
+enum CommandKind {ADD, PRINT, SORT, CLEAR, EXIT, INVALID};
+
+CommandKind getCommandKind(string commandString) {
+    for (char& c : commandString) c = toupper(c);
+    if (commandString == "ADD") {
+        return ADD;
+    } else if (commandString == "PRINT") {
+        return PRINT;
+    } else if (commandString == "SORT") {
+        return SORT;
+    } else if (commandString == "CLEAR") {
+        return CLEAR;
+    } else if (commandString == "EXIT") {
+        return EXIT;
+    } else {
+        return INVALID;
+    }
+}
+
+Rectangle getRectangle() {
+    Rectangle rect;
+    cin >> rect.width >> rect.height;
+    return rect;
+}
+
+
+void print(const vector<Rectangle>& rectangles) {
+    cout << "Rectangles Count: " << rectangles.size() << "\n";
+    for (vector<Rectangle>::const_iterator it = rectangles.begin(); it != rectangles.end(); ++it) {
+        cout << "    " << it->width << " " << it->height << " " << it->area() << "\n";
+    }
+}
+
+void swap(Rectangle& a, Rectangle& b) {
+    Rectangle temp = a;
+    a = b;
+    b = temp;
+}
+
+void sort(vector<Rectangle>& rectangles) {
+    for (size_t i = 0; i < rectangles.size() - 1; ++i) {
+        for (size_t j = 0; j < rectangles.size() - i - 1; ++j) {
+            if (rectangles[j].area() > rectangles[j + 1].area()) {
+                swap(rectangles[j], rectangles[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    vector<Rectangle> rectangles;
+    while (true) {
+        string commandString;
+        cin >> commandString;
+        const CommandKind command = getCommandKind(commandString);
+        
+        switch (command) {
+            case ADD : {
+                const Rectangle& newRectangle = getRectangle();
+                rectangles.push_back(newRectangle);
+                break;
+            }
+            case PRINT : {
+                print(rectangles);
+                break;
+            }
+            case SORT: {
+                sort(rectangles);
+                print(rectangles);
+                break;
+            }
+            case CLEAR: rectangles.clear(); break;
+            case EXIT: break;
+            case INVALID: break;
+        }
+            
+        if (command == EXIT) break;
+            
+    }
+}
+    
+    
