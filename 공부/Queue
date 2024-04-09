@@ -1,0 +1,14 @@
+큐(Queue)은 대표적인 FIFO(FIrst In First Out) 구조
+처음에 넣은 데이터가 처음으로 빠져나오는 구조
+push, pop, empty, front, back, swap
+
+#incude <queue>
+queue<int> q;
+
+q.push(element) //삽입
+q.pop() //front 데이터 삭제
+q.front() //최상위 데이터 반환
+q.back() //마지막 데이터 반환
+q.size() //사이즈 반환
+q.empty() //비어있는지 확인
+swaqp(queue1, queue2)
